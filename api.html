@@ -4,6 +4,16 @@
 function main() {
     document.getElementById("demo").innerHTML = "Hello JavaScript!";
 }
+function bibles() {
+    fetch("https://api.scripture.api.bible/v1/bibles", {
+        method: "GET",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "api-key": "1f4a8b63c3eeaa52c2edca0f227db232"
+        }
+    }).then(resp => console.log(resp))
+}
         </script>
     </head>
     <body onload="main()"> 
