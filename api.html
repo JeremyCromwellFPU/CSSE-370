@@ -17,16 +17,21 @@ function fetchBibles() {
 }
 
 function processBibles(jsonBibles) {
+    var elBibles = document.getElementById("bibles")
     jsonBibles
         .data
         .filter(jsonBible => jsonBible.language.name === 'English')
         .forEach(bible => {
             console.log(bible.name)
+            var li = document.createElement('li')
+            li.appendChild(document.createTextNode(bible.name))
+            elBibles.appendChild(li)
         });
 }
         </script>
     </head>
     <body onload="main()"> 
         <div id="demo"></div>
+        <ul id="bibles"></ul>
     </body>
 </html>
