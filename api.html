@@ -17,7 +17,7 @@ function fetchBibles() {
 }
 
 function processBibles(jsonBibles) {
-    jsonBibles
+    Array.from(jsonBibles)
         .filter(jsonBible => jsonBible.language.name === 'English')
         .forEach(bible => {
             console.log(bible.name)
