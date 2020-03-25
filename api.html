@@ -3,9 +3,9 @@
         <script>
 function main() {
     document.getElementById("demo").innerHTML = "Hello JavaScript!";
-    bibles()
+    fetchBibles()
 }
-function bibles() {
+function fetchBibles() {
     fetch("https://api.scripture.api.bible/v1/bibles", {
         method: "GET",
         headers: {
@@ -14,6 +14,14 @@ function bibles() {
             "api-key": "1f4a8b63c3eeaa52c2edca0f227db232"
         }
     }).then(resp => resp.json()).then(data => console.log(data))
+}
+
+function processBibles(jsonBibles) {
+    jsonBibles
+        .filter(jsonBible => jsonBible.language.name === 'English')
+        .forEach(bible => {
+            console.log(bible.name)
+        });
 }
         </script>
     </head>
