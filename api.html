@@ -17,6 +17,7 @@ function fetchBibles() {
 }
 
 function processBibles(jsonBibles) {
+    console.log(jsonBibles)
     Array.from(jsonBibles)
         .forEach(bible => {
             console.log(bible.name)
