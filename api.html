@@ -3,7 +3,6 @@
         <script>
 function main() {
     document.getElementById("demo").innerHTML = "Hello JavaScript!";
-    fetchBibles()
 }
 function fetchBibles() {
     fetch("https://api.scripture.api.bible/v1/bibles", {
@@ -32,6 +31,7 @@ function processBibles(jsonBibles) {
     </head>
     <body onload="main()"> 
         <div id="demo"></div>
+        <div onclick="fetchBibles()">Fetch Bibles</div>
         <ul id="bibles"></ul>
     </body>
 </html>
